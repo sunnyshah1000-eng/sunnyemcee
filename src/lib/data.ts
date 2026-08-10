@@ -1,16 +1,18 @@
 export const profile = {
   name: "Sunny Shah",
-  title: "Software Engineer",
-  tagline: "I build clean, useful software and occasionally write about it.",
+  title: "Conference Emcee & Speaker",
+  tagline:
+    "Comedy, storytelling, and authenticity that keeps audiences engaged and laughing.",
   email: "sunnyshah1000@gmail.com",
   location: "Earth",
   social: {
     github: "https://github.com/sunnyshah1000",
     linkedin: "https://linkedin.com/in/sunnyshah1000",
   },
-  about: `Hi, I'm Sunny. I'm a software engineer who enjoys turning ideas into
-    working products — from backend systems to polished front ends. This
-    site is a work in progress; edit src/lib/data.ts to make it yours.`,
+  about: `Hi, I'm Sunny. I host and emcee conferences, corporate events, and
+    galas — bringing comedy, storytelling, and genuine energy to keep a room
+    engaged. This site is a work in progress; edit src/lib/data.ts to make
+    it yours.`,
 };
 
 export type Project = {
@@ -24,28 +26,27 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "project-one",
-    name: "Project One",
+    slug: "highlight-one",
+    name: "Tech Conference Keynote",
     description:
-      "A short description of a project you've built. Swap this out with something real.",
-    tags: ["TypeScript", "Next.js"],
+      "A short description of this event — the audience, the vibe, what made it memorable. Swap this out with something real.",
+    tags: ["Keynote", "Corporate"],
     link: "#",
-    repo: "#",
   },
   {
-    slug: "project-two",
-    name: "Project Two",
+    slug: "highlight-two",
+    name: "Comedy Night Hosting",
     description:
-      "Another project worth showing off. Add a link to a live demo or the repo.",
-    tags: ["Python", "APIs"],
-    repo: "#",
+      "Another highlight worth showing off. Add a link to a video clip if you have one.",
+    tags: ["Comedy", "Live"],
+    link: "#",
   },
   {
-    slug: "project-three",
-    name: "Project Three",
+    slug: "highlight-three",
+    name: "Corporate Gala",
     description:
-      "A third project. Three is a good minimum for a first pass at a portfolio.",
-    tags: ["React", "Design"],
+      "A third highlight. Three is a good minimum for a first pass at a reel.",
+    tags: ["Gala", "Emcee"],
     link: "#",
   },
 ];
@@ -59,31 +60,17 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Software Engineer",
-    org: "Your Current Company",
+    role: "Conference Emcee",
+    org: "Freelance",
     period: "2024 — Present",
     description:
-      "What you do day to day. Mention the stack, the team, and an outcome or two.",
+      "What you do day to day — the kinds of events you host, your style, and a standout moment or two.",
   },
   {
-    role: "Software Engineer",
-    org: "A Previous Company",
+    role: "Host & Speaker",
+    org: "Earlier Work",
     period: "2022 — 2024",
     description:
-      "A prior role. Focus on impact: what shipped, what improved, what you owned.",
-  },
-];
-
-export type EducationItem = {
-  school: string;
-  degree: string;
-  period: string;
-};
-
-export const education: EducationItem[] = [
-  {
-    school: "Your University",
-    degree: "B.S. in Computer Science",
-    period: "2018 — 2022",
+      "Where you got your start hosting or speaking. Focus on the moment it clicked.",
   },
 ];

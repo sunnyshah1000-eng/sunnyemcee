@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { profile, projects, experience, education } from "@/lib/data";
+import { profile, projects, experience } from "@/lib/data";
 import { posts } from "@/lib/posts";
 
 export default function Home() {
@@ -24,12 +24,12 @@ export default function Home() {
             Get in touch
           </a>
           <a
-            href={profile.social.github}
+            href={profile.social.linkedin}
             target="_blank"
             rel="noreferrer"
             className="rounded-full border border-black/10 px-4 py-2 font-medium transition-colors hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/10"
           >
-            GitHub
+            LinkedIn
           </a>
         </div>
       </section>
@@ -62,31 +62,12 @@ export default function Home() {
             </div>
           ))}
         </div>
-
-        <h3 className="mt-10 mb-4 text-sm font-semibold uppercase tracking-wide text-foreground/50">
-          Education
-        </h3>
-        <div className="flex flex-col gap-4">
-          {education.map((item) => (
-            <div
-              key={item.school}
-              className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"
-            >
-              <h4 className="font-medium">
-                {item.degree} · {item.school}
-              </h4>
-              <span className="text-sm text-foreground/50">
-                {item.period}
-              </span>
-            </div>
-          ))}
-        </div>
       </section>
 
-      {/* Projects */}
+      {/* Highlights */}
       <section id="projects" className="scroll-mt-24">
         <h2 className="mb-6 text-xl font-semibold tracking-tight">
-          Projects
+          Highlights
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {projects.map((project) => (
