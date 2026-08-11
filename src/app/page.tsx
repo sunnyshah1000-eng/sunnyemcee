@@ -1,11 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { profile, speaking } from "@/lib/data";
 import { posts } from "@/lib/posts";
-
-const initials = profile.name
-  .split(" ")
-  .map((word) => word[0])
-  .join("");
 
 export default function Home() {
   const latestPost = posts[0];
@@ -15,9 +11,14 @@ export default function Home() {
     <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-10 px-6 py-20 sm:py-28">
       {/* Header */}
       <div className="flex items-center gap-4">
-        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-line bg-white/5 text-lg font-medium">
-          {initials}
-        </div>
+        <Image
+          src="/avatar.jpg"
+          alt={profile.name}
+          width={64}
+          height={64}
+          className="h-16 w-16 shrink-0 rounded-full border border-line object-cover"
+          priority
+        />
         <h1 className="text-2xl font-medium">{profile.name}</h1>
       </div>
 
