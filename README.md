@@ -1,7 +1,8 @@
 # Personal Website
 
-A personal site built with Next.js (App Router) and Tailwind CSS. Includes
-About, Speaking, Writing, and Contact sections.
+A personal site built with Next.js (App Router) and Tailwind CSS. A single
+minimal page — name, short bio, and two categories (Writing, Speaking) each
+showing a "latest" preview.
 
 ## Getting started
 

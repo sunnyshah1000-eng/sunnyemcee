@@ -1,18 +1,15 @@
 export const profile = {
   name: "Sunny Shah",
   title: "Conference Emcee & Speaker",
-  tagline:
-    "Comedy, storytelling, and authenticity that keeps audiences engaged and laughing.",
+  tagline: "Conference emcee and speaker.",
   email: "sunnyshah1000@gmail.com",
   location: "Earth",
   social: {
     github: "https://github.com/sunnyshah1000",
     linkedin: "https://linkedin.com/in/sunnyshah1000",
   },
-  about: `Hi, I'm Sunny. I host and emcee conferences, corporate events, and
-    galas — bringing comedy, storytelling, and genuine energy to keep a room
-    engaged. This site is a work in progress; edit src/lib/data.ts to make
-    it yours.`,
+  about:
+    "I host and emcee conferences, corporate events, and galas. I occasionally write about it here.",
 };
 
 export type SpeakingItem = {

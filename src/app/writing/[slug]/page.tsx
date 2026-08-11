@@ -26,20 +26,18 @@ export default async function WritingPost({
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-10 px-6 py-20">
+    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-10 px-6 py-20 sm:py-28">
       <Link
         href="/writing"
-        className="text-xs tracking-[0.15em] text-muted uppercase transition-colors hover:text-accent"
+        className="text-sm text-muted hover:text-foreground"
       >
         ← Writing
       </Link>
-      <div className="flex flex-col gap-3">
-        <h1 className="font-serif text-3xl sm:text-4xl">{post.title}</h1>
-        <span className="text-xs tracking-[0.15em] text-muted uppercase">
-          {post.date}
-        </span>
+      <div className="flex flex-col gap-2">
+        <h1 className="text-2xl font-medium">{post.title}</h1>
+        <span className="text-sm text-muted">{post.date}</span>
       </div>
-      <div className="flex flex-col gap-5 text-lg leading-relaxed text-foreground/80">
+      <div className="flex flex-col gap-5 leading-relaxed text-foreground/90">
         {post.content.map((paragraph, i) => (
           <p key={i}>{paragraph}</p>
         ))}

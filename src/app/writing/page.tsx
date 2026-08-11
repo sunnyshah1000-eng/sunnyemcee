@@ -8,26 +8,23 @@ export const metadata: Metadata = {
 
 export default function WritingIndex() {
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-10 px-6 py-20">
-      <h1 className="font-serif text-3xl text-accent italic">Writing</h1>
-      <div className="flex flex-col">
+    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-10 px-6 py-20 sm:py-28">
+      <Link href="/" className="text-sm text-muted hover:text-foreground">
+        ← Home
+      </Link>
+      <h1 className="text-2xl font-medium">Writing</h1>
+      <div className="flex flex-col divide-y divide-line border-t border-line">
         {posts.map((post) => (
           <Link
             key={post.slug}
             href={`/writing/${post.slug}`}
-            className="group block border-t border-line py-6 first:pt-0"
+            className="group flex flex-col gap-1 py-6"
           >
-            <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-              <h2 className="font-serif text-xl transition-colors group-hover:text-accent">
-                {post.title}
-              </h2>
-              <span className="text-xs tracking-[0.15em] text-muted uppercase">
-                {post.date}
-              </span>
-            </div>
-            <p className="mt-2 max-w-xl text-foreground/70">
-              {post.excerpt}
-            </p>
+            <span className="font-medium group-hover:text-muted">
+              {post.title}
+            </span>
+            <span className="text-sm text-muted">{post.date}</span>
+            <span className="mt-1 text-foreground/80">{post.excerpt}</span>
           </Link>
         ))}
       </div>
