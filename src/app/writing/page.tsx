@@ -8,23 +8,35 @@ export const metadata: Metadata = {
 
 export default function WritingIndex() {
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-10 px-6 py-20 sm:py-28">
-      <Link href="/" className="text-sm text-muted hover:text-foreground">
+    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col px-6 py-16 sm:py-24">
+      <Link
+        href="/"
+        className="text-sm text-muted transition-colors hover:text-accent"
+      >
         ← Home
       </Link>
-      <h1 className="text-2xl font-medium">Writing</h1>
-      <div className="flex flex-col divide-y divide-line border-t border-line">
-        {posts.map((post) => (
+      <h1 className="mt-6 font-display text-4xl font-bold tracking-tight">
+        Writing
+      </h1>
+      <div className="mt-12 flex flex-col divide-y divide-line border-t border-line">
+        {posts.map((post, i) => (
           <Link
             key={post.slug}
             href={`/writing/${post.slug}`}
-            className="group flex flex-col gap-1 py-6"
+            className="group flex flex-col gap-1.5 py-7"
           >
-            <span className="font-medium group-hover:text-muted">
-              {post.title}
+            <div className="flex items-baseline gap-4">
+              <span className="tabular text-sm text-accent">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="font-display text-lg font-bold tracking-tight transition-colors group-hover:text-accent">
+                {post.title}
+              </span>
+            </div>
+            <span className="tabular pl-9 text-sm text-muted">
+              {post.date}
             </span>
-            <span className="text-sm text-muted">{post.date}</span>
-            <span className="mt-1 text-foreground/80">{post.excerpt}</span>
+            <p className="pl-9 text-foreground/75">{post.excerpt}</p>
           </Link>
         ))}
       </div>

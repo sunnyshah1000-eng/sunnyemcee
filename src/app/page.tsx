@@ -8,28 +8,35 @@ export default function Home() {
   const latestSpeaking = speaking[0];
 
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-10 px-6 py-20 sm:py-28">
-      {/* Header */}
-      <div className="flex items-center gap-4">
+    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col px-6 py-16 sm:py-24">
+      {/* Hero */}
+      <header className="flex items-start justify-between gap-6">
+        <div className="flex flex-col gap-4">
+          <p className="text-xs font-medium tracking-[0.2em] text-accent uppercase">
+            {profile.title}
+          </p>
+          <h1 className="font-display text-5xl leading-[0.95] font-bold tracking-tight sm:text-6xl">
+            {profile.name}
+          </h1>
+        </div>
         <Image
           src="/avatar.jpg"
           alt={profile.name}
-          width={64}
-          height={64}
-          className="h-16 w-16 shrink-0 rounded-full border border-line object-cover"
+          width={112}
+          height={112}
           priority
+          className="h-20 w-20 shrink-0 rounded-2xl object-cover grayscale transition-all duration-500 hover:grayscale-0 sm:h-28 sm:w-28"
         />
-        <h1 className="text-2xl font-medium">{profile.name}</h1>
-      </div>
+      </header>
 
       {/* Bio */}
-      <div className="flex flex-col gap-4 leading-relaxed text-foreground/90">
+      <div className="mt-10 flex flex-col gap-4 text-[15px] leading-relaxed text-foreground/80 sm:text-base">
         <p>{profile.about}</p>
         <p>
-          You can reach me by email at{" "}
+          Reach out by email at{" "}
           <a
             href={`mailto:${profile.email}`}
-            className="underline decoration-foreground/30 underline-offset-2 hover:decoration-foreground"
+            className="text-foreground underline decoration-accent decoration-2 underline-offset-4 transition-colors hover:text-accent"
           >
             {profile.email}
           </a>{" "}
@@ -38,7 +45,7 @@ export default function Home() {
             href={profile.social.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="underline decoration-foreground/30 underline-offset-2 hover:decoration-foreground"
+            className="text-foreground underline decoration-accent decoration-2 underline-offset-4 transition-colors hover:text-accent"
           >
             LinkedIn
           </a>
@@ -46,52 +53,70 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Categories */}
-      <div className="flex flex-col divide-y divide-line border-t border-line">
-        <div className="py-6">
-          <Link
-            href="/writing"
-            className="flex items-baseline justify-between"
-          >
-            <span className="text-lg">Writing</span>
+      {/* Index */}
+      <div className="mt-16 flex flex-col divide-y divide-line border-t border-line">
+        <div className="py-7">
+          <div className="flex items-baseline justify-between">
+            <div className="flex items-baseline gap-4">
+              <span className="tabular text-sm text-accent">01</span>
+              <Link
+                href="/writing"
+                className="font-display text-xl font-bold tracking-tight transition-colors hover:text-accent"
+              >
+                Writing
+              </Link>
+            </div>
             <span className="text-sm text-muted">Essays</span>
-          </Link>
+          </div>
           {latestPost && (
             <Link
               href={`/writing/${latestPost.slug}`}
-              className="group mt-4 flex flex-col gap-1"
+              className="group mt-5 flex flex-col gap-1 pl-9"
             >
-              <span className="text-xs tracking-wide text-muted uppercase">
+              <span className="text-[11px] font-medium tracking-[0.2em] text-muted uppercase">
                 Latest
               </span>
-              <span className="inline-flex items-baseline gap-1.5 font-medium group-hover:text-muted">
+              <span className="inline-flex items-baseline gap-1.5 font-medium transition-colors group-hover:text-accent">
                 {latestPost.title}
                 <span aria-hidden className="text-sm">
                   ↗
                 </span>
               </span>
-              <span className="text-sm text-muted">{latestPost.date}</span>
+              <span className="tabular text-sm text-muted">
+                {latestPost.date}
+              </span>
             </Link>
           )}
         </div>
 
-        <div className="py-6">
+        <div className="py-7">
           <div className="flex items-baseline justify-between">
-            <span className="text-lg">Speaking</span>
+            <div className="flex items-baseline gap-4">
+              <span className="tabular text-sm text-accent">02</span>
+              <span className="font-display text-xl font-bold tracking-tight">
+                Speaking
+              </span>
+            </div>
             <span className="text-sm text-muted">Engagements</span>
           </div>
           {latestSpeaking && (
-            <div className="mt-4 flex flex-col gap-1">
-              <span className="text-xs tracking-wide text-muted uppercase">
+            <div className="mt-5 flex flex-col gap-1 pl-9">
+              <span className="text-[11px] font-medium tracking-[0.2em] text-muted uppercase">
                 Latest
               </span>
               <span className="font-medium">{latestSpeaking.title}</span>
-              <span className="text-sm text-muted">
+              <span className="tabular text-sm text-muted">
                 {latestSpeaking.context} · {latestSpeaking.period}
               </span>
             </div>
           )}
         </div>
+      </div>
+
+      {/* Footer */}
+      <div className="mt-20 flex items-center gap-2 text-xs text-muted">
+        <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+        {profile.name} · {new Date().getFullYear()}
       </div>
     </div>
   );
