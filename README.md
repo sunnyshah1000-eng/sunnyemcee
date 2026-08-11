@@ -1,7 +1,7 @@
 # Personal Website
 
 A personal site built with Next.js (App Router) and Tailwind CSS. Includes
-About, Experience, Projects, a simple Blog, and Contact sections.
+About, Speaking, Writing, and Contact sections.
 
 ## Getting started
 
@@ -14,11 +14,10 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Making it yours
 
-- `src/lib/data.ts` — your name, title, bio, work experience, education,
-  and projects.
-- `src/lib/posts.ts` — blog posts, as a plain array (no CMS needed).
+- `src/lib/data.ts` — your name, title, bio, and speaking history.
+- `src/lib/posts.ts` — writing posts, as a plain array (no CMS needed).
 - `src/app/page.tsx` — the home page layout/sections.
-- `src/app/blog/` — blog index and post pages.
+- `src/app/writing/` — writing index and post pages.
 
 ## Deploying
 

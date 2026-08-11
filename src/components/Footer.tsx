@@ -2,10 +2,8 @@ import { profile } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-black/10 py-8 text-center text-sm text-foreground/60 dark:border-white/10">
-      <p>
-        © {new Date().getFullYear()} {profile.name}. Built with Next.js.
-      </p>
+    <footer className="border-t border-line px-6 py-10 text-center text-xs tracking-[0.15em] text-muted uppercase">
+      {profile.name} · {new Date().getFullYear()}
     </footer>
   );
 }

@@ -3,25 +3,24 @@ import { profile } from "@/lib/data";
 
 const navLinks = [
   { href: "/#about", label: "About" },
-  { href: "/#experience", label: "Experience" },
-  { href: "/#projects", label: "Highlights" },
-  { href: "/blog", label: "Blog" },
+  { href: "/#speaking", label: "Speaking" },
+  { href: "/writing", label: "Writing" },
   { href: "/#contact", label: "Contact" },
 ];
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-10 border-b border-black/10 bg-background/80 backdrop-blur dark:border-white/10">
-      <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-semibold tracking-tight">
+    <header className="border-b border-line">
+      <div className="mx-auto flex max-w-2xl items-center justify-between px-6 py-6">
+        <Link href="/" className="font-serif text-lg italic">
           {profile.name}
         </Link>
-        <nav className="flex gap-5 text-sm text-foreground/70">
+        <nav className="flex gap-6 text-xs tracking-[0.15em] text-muted uppercase">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="transition-colors hover:text-foreground"
+              className="transition-colors hover:text-accent"
             >
               {link.label}
             </Link>

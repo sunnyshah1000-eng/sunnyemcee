@@ -15,60 +15,24 @@ export const profile = {
     it yours.`,
 };
 
-export type Project = {
-  slug: string;
-  name: string;
-  description: string;
-  tags: string[];
-  link?: string;
-  repo?: string;
-};
-
-export const projects: Project[] = [
-  {
-    slug: "highlight-one",
-    name: "Tech Conference Keynote",
-    description:
-      "A short description of this event — the audience, the vibe, what made it memorable. Swap this out with something real.",
-    tags: ["Keynote", "Corporate"],
-    link: "#",
-  },
-  {
-    slug: "highlight-two",
-    name: "Comedy Night Hosting",
-    description:
-      "Another highlight worth showing off. Add a link to a video clip if you have one.",
-    tags: ["Comedy", "Live"],
-    link: "#",
-  },
-  {
-    slug: "highlight-three",
-    name: "Corporate Gala",
-    description:
-      "A third highlight. Three is a good minimum for a first pass at a reel.",
-    tags: ["Gala", "Emcee"],
-    link: "#",
-  },
-];
-
-export type ExperienceItem = {
-  role: string;
-  org: string;
+export type SpeakingItem = {
+  title: string;
+  context: string;
   period: string;
   description: string;
 };
 
-export const experience: ExperienceItem[] = [
+export const speaking: SpeakingItem[] = [
   {
-    role: "Conference Emcee",
-    org: "Freelance",
+    title: "Conference Emcee",
+    context: "Freelance",
     period: "2024 — Present",
     description:
       "What you do day to day — the kinds of events you host, your style, and a standout moment or two.",
   },
   {
-    role: "Host & Speaker",
-    org: "Earlier Work",
+    title: "Host & Speaker",
+    context: "Earlier work",
     period: "2022 — 2024",
     description:
       "Where you got your start hosting or speaking. Focus on the moment it clicked.",

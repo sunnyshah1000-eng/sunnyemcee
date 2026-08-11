@@ -9,15 +9,15 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: PageProps<"/blog/[slug]">): Promise<Metadata> {
+}: PageProps<"/writing/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
   return { title: post?.title ?? "Post not found" };
 }
 
-export default async function BlogPost({
+export default async function WritingPost({
   params,
-}: PageProps<"/blog/[slug]">) {
+}: PageProps<"/writing/[slug]">) {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
 
@@ -26,20 +26,20 @@ export default async function BlogPost({
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-6 py-16">
+    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-10 px-6 py-20">
       <Link
-        href="/blog"
-        className="text-sm text-foreground/60 underline underline-offset-4 hover:opacity-80"
+        href="/writing"
+        className="text-xs tracking-[0.15em] text-muted uppercase transition-colors hover:text-accent"
       >
-        ← Back to blog
+        ← Writing
       </Link>
-      <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-semibold tracking-tight">
-          {post.title}
-        </h1>
-        <span className="text-sm text-foreground/50">{post.date}</span>
+      <div className="flex flex-col gap-3">
+        <h1 className="font-serif text-3xl sm:text-4xl">{post.title}</h1>
+        <span className="text-xs tracking-[0.15em] text-muted uppercase">
+          {post.date}
+        </span>
       </div>
-      <div className="flex flex-col gap-4 text-foreground/80">
+      <div className="flex flex-col gap-5 text-lg leading-relaxed text-foreground/80">
         {post.content.map((paragraph, i) => (
           <p key={i}>{paragraph}</p>
         ))}
