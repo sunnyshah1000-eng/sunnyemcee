@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
@@ -17,6 +17,14 @@ export const metadata: Metadata = {
   title: "AI Content Coach",
   description:
     "A warm, voice-first coaching conversation about the content you create.",
+  appleWebApp: {
+    title: "Coach",
+    statusBarStyle: "black-translucent",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#e2461b",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
