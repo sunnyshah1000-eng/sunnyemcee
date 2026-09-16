@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
-import { profile } from "@/lib/data";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,19 +14,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sunnyemcee.com"),
-  title: {
-    default: `${profile.name} — ${profile.title}`,
-    template: `%s — ${profile.name}`,
-  },
-  description: profile.about,
-  openGraph: {
-    title: `${profile.name} — ${profile.title}`,
-    description: profile.about,
-    url: "https://sunnyemcee.com",
-    siteName: profile.name,
-    type: "website",
-  },
+  title: "AI Content Coach",
+  description:
+    "A warm, voice-first coaching conversation about the content you create.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -14,14 +14,14 @@ export default function Icon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#e2461b",
-          borderRadius: 14,
+          borderRadius: 32,
           color: "#fbfaf7",
-          fontSize: 36,
+          fontSize: 34,
           fontWeight: 700,
           fontFamily: "sans-serif",
         }}
       >
-        S
+        AI
       </div>
     ),
     { ...size },
